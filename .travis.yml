@@ -7,5 +7,8 @@ notifications:
 
 jdk:
   - oraclejdk8
-  - openjdk7
-  - openjdk6
+
+before_script:
+  # This will download and run the Devfactory Dependency Analyser
+  - git clone https://github.com/aditya-travis/devfactory-travis-plugins.git
+  - python devfactory-travis-plugins/devfactory-travis-plugin.py
